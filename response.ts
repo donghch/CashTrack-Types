@@ -9,3 +9,5 @@ interface Response {
     text: string;
     data?: any;
 }
+
+export { Response, ResponseCode };
