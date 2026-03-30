@@ -1,13 +1,11 @@
 
-enum ResponseCode {
-    SUCCSESS, 
+export enum ServerResponseCode {
+    SUCCESS, 
     ERROR
 }
 
-interface Response {
-    code: ResponseCode;
+export interface ServerResponse {
+    code: ServerResponseCode;
     text: string;
     data?: any;
 }
-
-export { Response, ResponseCode };
