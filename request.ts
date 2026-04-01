@@ -19,15 +19,15 @@ export const TransactionFilterSchema = z.object({
   category: z.union([z.number(), z.string()]).optional(),
   
   // Amount filters (in minor units)
-  minAmount: z.number().int().nonnegative().optional(),
-  maxAmount: z.number().int().nonnegative().optional(),
+  minTotal: z.number().int().nonnegative().optional(),
+  maxTotal: z.number().int().nonnegative().optional(),
   
   // Pagination
   limit: z.number().int().min(1).max(100).default(20),
   offset: z.number().int().nonnegative().default(0),
   
   // Sorting
-  sortBy: z.enum(["transactionTime", "totalMinor", "merchant"]).default("transactionTime"),
+  sortBy: z.enum(["transactionTime", "total", "merchant"]).default("transactionTime"),
   sortOrder: z.enum(["asc", "desc"]).default("desc"),
   
   // Include nested data
